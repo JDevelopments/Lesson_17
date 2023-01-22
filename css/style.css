@@ -1,0 +1,579 @@
+/*----FONTS----*/
+@font-face {
+   font-family: "Lato";
+   src: url("../fonts/Lato/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato/Lato-Regular.woff") format("woff");
+   font-display: swap;
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Lato";
+   src: url("../fonts/Lato/Lato-Bold.woff2") format("woff2"), url("../fonts/Lato/Lato-Bold.woff") format("woff");
+   font-display: swap;
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Lato";
+   src: url("../fonts/Lato/Lato-Black.woff2") format("woff2"), url("../fonts/Lato/Lato-Black.woff") format("woff");
+   font-display: swap;
+   font-weight: 900;
+   font-style: normal;
+}
+
+html,
+body {
+   height: 100%;
+}
+
+body {
+   font-family: "Lato";
+   color: #1e212c;
+   min-width: 320px;
+}
+
+.wrapper {
+   min-height: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+}
+
+.page {
+   flex: 1 1 auto;
+}
+
+[class*="__container"] {
+   max-width: 1230px;
+   margin: 0 auto;
+   /*    Відступи безпеки    */
+   padding: 0px 15px;
+}
+
+/*    Header    */
+.header {
+   position: relative;
+   z-index: 2;
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 160%;
+   color: #424551;
+   background: linear-gradient(55.95deg, rgb(255, 63, 58, 0.2) 0%, rgb(247, 94, 5, 0.2) 100%);
+}
+.header__container {
+   padding: 20px 0;
+   display: flex;
+   column-gap: 60px;
+   row-gap: 25px;
+   align-items: center;
+}
+
+.header__logo img {
+   max-height: 52px;
+}
+
+.header__menu {
+   flex: 1 1 auto;
+}
+
+.menu__list {
+   display: flex;
+   column-gap: 40px;
+   row-gap: 10px;
+   flex-wrap: wrap;
+}
+
+.menu__link {
+   white-space: nowrap;
+}
+
+.menu__link:hover,
+.header__signin:hover {
+   text-decoration: underline;
+}
+
+.header__action {
+   display: flex;
+   flex-shrink: 0;
+   column-gap: 36px;
+   row-gap: 10px;
+   align-items: center;
+}
+
+.header__signin {
+   background: url(../img/icons/user.svg) 0 center no-repeat;
+   padding-left: 26px;
+}
+
+/*     Welcom setion     */
+
+.page__welcom {
+   background: linear-gradient(55.95deg, rgb(255, 63, 58, 0.2) 0%, rgb(247, 94, 5, 0.2) 100%);
+   padding-top: 108px;
+   /* Позиціонування для декорів */
+   position: relative;
+   /* Щоб декори не виходили за межі своєї секції */
+   overflow: hidden;
+}
+
+.welcom__content {
+   position: relative;
+   z-index: 2;
+   display: flex;
+   align-items: center;
+   padding-bottom: 189px;
+}
+
+.welcom__column-a {
+   flex: 0 1 50%;
+   display: flex;
+   flex-direction: column;
+   padding-right: 24px;
+}
+
+.welcom__column-b {
+   flex: 0 1 50%;
+   text-align: right;
+}
+.welcom__img {
+   max-width: 100%;
+   margin-right: -47px;
+}
+
+.welcom__play {
+   position: relative;
+   font-weight: 700;
+   font-size: 14px;
+   line-height: 150%;
+   align-self: flex-start;
+   display: inline-flex;
+   align-items: center;
+   column-gap: 16px;
+}
+.welcom__play:not(:last-child) {
+   margin-bottom: 24px;
+}
+.welcom__play:hover {
+   text-decoration: underline;
+}
+.welcom__play::before {
+   content: "";
+   background: #ff3f3a url(../img/icons/play.svg) center no-repeat;
+   flex: 0 0 52px;
+   width: 52px;
+   height: 52px;
+   border-radius: 50%;
+}
+
+.welcom__play::after {
+   content: "";
+   flex: 0 0 52px;
+   height: 52px;
+   width: 52px; /* при flex чогось з текстом треба додавати width  */
+   border-radius: 50%;
+   background: #ff3f3a;
+   opacity: 0.12;
+   transform: scale(1.6);
+   position: absolute;
+   left: 0;
+   animation: play-impuls 2s infinite ease;
+}
+@keyframes play-impuls {
+   0% {
+   }
+   100% {
+      scale: 1.5;
+      opacity: 0;
+   }
+}
+
+.welcom__text {
+   font-weight: 900;
+   font-size: 64px;
+   line-height: 130%;
+   letter-spacing: 1px;
+   margin-bottom: 60px;
+   letter-spacing: 1px;
+}
+
+.welcom__text:not(:last-child) {
+   margin-bottom: 60px;
+}
+
+.welconm__btn-box {
+   display: flex;
+   column-gap: 24px;
+}
+
+/*                           ADWANAGES                       */
+
+.edwantag {
+   color: #1e212c;
+   display: flex;
+   gap: 20px;
+   justify-content: space-between;
+}
+
+.welcom__edwantages {
+   padding-bottom: 80px;
+}
+
+.edwantag__item {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   align-self: flex-start;
+   column-gap: 12px;
+}
+.edwantag__value {
+   font-weight: 900;
+   font-size: 46px;
+   line-height: 130%;
+}
+.ededwantag__text {
+   text-align: center;
+   line-height: 160%;
+   flex: 0 1 auto;
+}
+.edwantag__separator {
+   border-radius: 50%;
+   flex: 0 0 8px;
+   align-self: center;
+   height: 8px;
+   background: #ff3f3a;
+}
+
+/*                                 Decor                                 */
+.welcom__decor {
+   position: absolute;
+}
+
+.welcom__decor--01 {
+   left: 4.27%;
+   top: 41px;
+}
+.welcom__decor--02 {
+   left: -5.83%;
+   bottom: -100px;
+}
+.welcom__decor--03 {
+   left: 41.2%;
+   top: 408px;
+}
+.welcom__decor--04 {
+   left: 38.18%;
+   top: 666px;
+}
+.welcom__decor--05 {
+   right: -2%;
+   bottom: 194px;
+}
+.welcom__decor--06 {
+   z-index: -1;
+   transform: rotate(135deg);
+   top: -20px;
+   right: 5%;
+}
+
+/*    Ubout-us section    */
+
+.page__ubout-us {
+   padding: 180px 0px;
+   /*   Для позиціонування декорів секції   */
+   position: relative;
+}
+.ubaut-us__container {
+   display: flex;
+   align-items: center;
+   column-gap: 135px;
+}
+.ubaut-us__img {
+   flex: 0 1 705px;
+}
+.ubaut-us__img img {
+   max-width: 100%;
+}
+.ubaut-us__content {
+   min-width: 300px;
+}
+.content {
+   display: flex;
+   flex-direction: column;
+}
+.title {
+   color: #1e212c;
+}
+
+.ubaut-us__title {
+   margin-bottom: 40px;
+}
+
+.title__subtitle {
+   margin-bottom: 8px;
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 150%;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+.title__text {
+   font-weight: 900;
+   font-size: 46px;
+   line-height: 130%;
+   color: #1e212c;
+}
+.content__list {
+   margin-bottom: 24px;
+}
+.list {
+   display: flex;
+   flex-direction: column;
+   row-gap: 12px;
+}
+.list__item {
+   line-height: 160%;
+   display: flex;
+   column-gap: 16px;
+}
+
+.list__item::before {
+   content: "";
+   flex: 0 0 16px;
+   width: 16px;
+   height: 16px;
+   margin-top: 5px;
+   background: url(../img/icons/check.svg) center no-repeat;
+}
+
+.content__button {
+   align-self: flex-start;
+}
+
+.ubout-us__decor--01 {
+   position: absolute;
+   z-index: -1;
+   top: 437px;
+   right: -165px;
+}
+
+.ubout-us__decor--02 {
+   position: absolute;
+   z-index: -1;
+   top: 240px;
+   left: -110px;
+}
+
+/*         Tutors section          */
+.tutors {
+}
+.page__tutors {
+   padding-bottom: 120px;
+}
+.tutors__container {
+   display: flex;
+   flex-direction: column;
+   row-gap: 60px;
+}
+
+.tutors__title {
+   text-align: center;
+}
+
+.tutors__actions {
+   display: flex;
+}
+.actions {
+   display: flex;
+}
+
+.action__button {
+   flex: 1 1 25%;
+   justify-content: center;
+   padding: 10px 0px;
+
+   display: flex;
+   column-gap: 8px;
+}
+
+.action__button:hover {
+   color: #ff3f3a;
+   outline: 1px solid #ff3f3a;
+   border-radius: 4px;
+}
+
+.action__button--01::before {
+   content: "";
+   background: url(../img/icons/Star.svg) center no-repeat;
+   height: 18px;
+   width: 18px;
+}
+
+.action__button--02::before {
+   content: "";
+   background: url(../img/icons/like.svg) center no-repeat;
+   height: 18px;
+   width: 18px;
+}
+
+.action__button--03::before {
+   content: "";
+   background: url(../img/icons/Layouts.svg) center no-repeat;
+   height: 18px;
+   width: 18px;
+}
+
+.action__button--04::before {
+   content: "";
+   background: url(../img/icons/Vector.svg) center no-repeat;
+   height: 18px;
+   width: 18px;
+}
+
+.tutors__content {
+   display: flex;
+   align-items: center;
+   column-gap: 135px;
+}
+.tutors__column-a {
+   flex: 0 1 495px;
+}
+.tutors__h {
+   font-weight: 900;
+   font-size: 32px;
+   line-height: 130%;
+   color: #1e212c;
+
+   margin-bottom: 24px;
+}
+.tutors__text {
+   line-height: 160%;
+   color: #424551;
+}
+.tutors__column-b {
+   flex: 0 1 600px;
+}
+
+.tutors__column-b img {
+   max-width: 100%;
+}
+
+/*                             Адаптивна сітка                          */
+
+@media (max-width: 1229.98px) {
+   [class*="__container"] {
+      max-width: 970px;
+   }
+
+   .menu__list {
+      justify-content: center;
+   }
+
+   .welcom__text {
+      font-size: 52px;
+   }
+}
+
+@media (max-width: 990.98px) {
+   [class*="__container"] {
+      max-width: 750px;
+   }
+
+   .header__action {
+      flex-direction: column;
+   }
+
+   .welcom__text {
+      font-size: 42px;
+   }
+
+   .ubaut-us__container {
+      flex-wrap: wrap-reverse;
+      justify-content: center;
+      row-gap: 25px;
+   }
+   .ubout-us {
+      padding: 50px 0px;
+   }
+
+   .tutors__actions {
+      flex-wrap: wrap;
+   }
+   .action__button {
+      flex-basis: 50%;
+   }
+}
+
+@media (max-width: 767.98px) {
+   [class*="__container"] {
+      padding: 0 15px;
+      max-width: none;
+   }
+
+   .header__action {
+      flex-direction: row;
+      justify-content: center;
+   }
+
+   .header__container {
+      flex-direction: column;
+   }
+
+   .welcom__content {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 25px;
+      padding-bottom: 50px;
+   }
+
+   .welcom__column-a {
+      align-items: center;
+      padding-right: 0px;
+      margin-bottom: 25px;
+   }
+
+   .welcom__play {
+      align-self: center;
+   }
+
+   .welcom__column-b {
+      flex: 0 1 100%;
+      width: 100%;
+      text-align: center;
+   }
+
+   .welcom__img {
+      margin-right: 0px;
+      max-width: 100%;
+   }
+
+   .welcom__text {
+      text-align: center;
+   }
+
+   .edwantag__separator {
+      display: none;
+   }
+
+   .edwantag {
+      flex-wrap: wrap;
+   }
+
+   .edwantag__item {
+      flex-basis: 48%;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+   }
+
+   .ededwantag__text {
+      white-space: nowrap;
+   }
+
+   .tutors__content {
+      flex-wrap: wrap-reverse;
+      row-gap: 24px;
+      justify-content: center;
+   }
+}

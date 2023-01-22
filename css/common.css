@@ -1,0 +1,31 @@
+.btn {
+   background: linear-gradient(55.95deg, #ff3f3a 0%, #f75e05 100%);
+   font-weight: 700;
+   color: white;
+   border-radius: 4px;
+   letter-spacing: 0.5px;
+   line-height: 1.25;
+   display: inline-block;
+   padding: 16px 40px;
+   text-align: center;
+}
+
+.btn:hover {
+   background: linear-gradient(55.95deg, #f75e05 0%, #ff3f3a 100%);
+}
+
+/* Кнопка  border gradient */
+
+.btn-border {
+   text-align: center;
+   padding: 0px;
+   border-radius: 0.55em;
+   color: #f75e05;
+   cursor: pointer;
+   border: 1px solid #f75e05;
+   padding: 15px 40px;
+}
+
+.btn-border:hover {
+   color: white;
+}
